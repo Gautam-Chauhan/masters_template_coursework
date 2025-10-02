@@ -1,0 +1,27 @@
+---
+title: "Practice Coursework"
+subtitle: "Example for creating RMarkdown documents for master's coursework"
+author: "Gautam Chauhan"
+format:
+  html:
+    toc: true
+    highlight: tango
+    self-contained: true
+  pdf: default
+format-links: false
+bibliography: ref.bib
+---
+
+# Import and explore the ChickWeight dataset
+
+```{r}
+# Import chick weight dataset
+chick_weight_dataset <- ChickWeight
+# Display first 5 rows of the dataset
+chick_weight_dataset[1:5,]
+```
+
+### References
+
+::: {#refs}
+:::
