@@ -12,14 +12,43 @@ format-links: false
 bibliography: ref.bib
 ---
 
-# Import and explore the ChickWeight dataset
+### Import and explore the ChickWeight dataset
 
 ```{r}
 # Import chick weight dataset
 chick_weight_dataset <- ChickWeight
-# Display first 5 rows of the dataset
-chick_weight_dataset[1:5,]
+# Display first 5 rows of the dataset in a nice-formatted table
+table <- chick_weight_dataset[1:5,]
+knitr::kable(table)
 ```
+
+### Histogram of chick weights stratified by different diets
+
+```{r}
+#| layout-ncol: 2
+#| layout-nrow: 2
+#| label: "Histograms"
+#| fig-subcap: 
+#|   - "Diet 1"
+#|   - "Diet 2"
+#|   - "Diet 3"
+#|   - "Diet 4"
+
+weight_d1 <- chick_weight_dataset$weight[chick_weight_dataset$Diet==1]
+weight_d2 <- chick_weight_dataset$weight[chick_weight_dataset$Diet==2]
+weight_d3 <- chick_weight_dataset$weight[chick_weight_dataset$Diet==3]
+weight_d4 <- chick_weight_dataset$weight[chick_weight_dataset$Diet==4]
+
+hist(weight_d1)
+hist(weight_d2)
+hist(weight_d3)
+hist(weight_d4)
+```
+
+
+
+
+
 
 ### References
 
